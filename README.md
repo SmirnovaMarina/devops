@@ -81,8 +81,6 @@ docker run -p 5000:5000 app-python-1
 
 Voi la!
 
-![Interface](https://drive.google.com/file/d/1vkTbyzehsteL31OV0K7aR68Zk8TPRCht/view?usp=sharing)
-
 ## Contributing <a name="contributing"></a>
 
 Contributions are welcome! Teamwork and collaboration boost development of ideas and accelerate improvement of projects. If you would like to contribute to the project, follow the steps:
