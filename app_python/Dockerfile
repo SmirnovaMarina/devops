@@ -1,10 +1,6 @@
 FROM python:3.9-slim
 MAINTAINER Marina Smirnova "m.smirnova@innopolis.university"
 
-# Use of non root user account
-#RUN addgroup -S user && adduser -S user -G user
-#USER user
-
 RUN apt-get update -y && \
     apt-get install -y python3-pip python-dev
 
