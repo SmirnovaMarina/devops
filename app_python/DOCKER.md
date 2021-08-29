@@ -1,4 +1,4 @@
-# Lab 1
+# Labs 1-2
 
 ## Best practices for writing a Dockerfile
 
@@ -18,4 +18,6 @@ So, I wrote a *.dockerignore* file which includes: *Dockerfile*, *PYTHON.md*, *D
 
 6. Use a docker-compose.yml file
 
-To ease the process of running and testing the container, I created a *docker-compose.yml* file which includes exposure of ports to establish a connection between the local machine and the container. 
+To ease the process of running and testing the container, I created a *docker-compose.yml* file which includes exposure of ports to establish a connection between the local machine and the container.
+
+# Labs 3-4

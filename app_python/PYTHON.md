@@ -1,4 +1,4 @@
-# Lab 1
+# Labs 1-2
 
 ## Best practices for writing a Python web application
 
@@ -25,3 +25,27 @@ To avoid overloading of unnecessary data and library clashes, it is recommended 
 6. Use production ready framework.
 
 I chose Flask framework.
+
+# Labs 3-4
+
+### Best practices for writing unit tests in Python
+
+1. Use Python standard library *unittest*.
+
+I chose *unittest* since..
+
+2. Write tests in a separate file from the code itself. 
+
+Also, one of the appropriate naming conventions is to call test files *test_module_name*.
+
+4. Not only test favourable outcomes, but also write tests that might break the behavior of the program. 
+
+It increases test coverage of your program.
+
+4. Create fixtures.
+
+To reduce amount of boilerplate code.
+
+5. Tests should be simple and fast.
+
+6. 

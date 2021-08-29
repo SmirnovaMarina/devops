@@ -1,20 +1,24 @@
-import pytz as pytz
-from flask import Flask, render_template
-from datetime import datetime
-
-app = Flask(__name__)
+from flask import Flask
+from show_time import show_time
 
 
-@app.route("/")
-def index():
-    return show_time()
+def create_app(test_config=None):
+    app = Flask(__name__)
+
+    if test_config is None:
+        # load the instance config, if it exists, when not testing
+        app.config.from_pyfile('config.py', silent=True)
+    else:
+        # load the test config if passed in
+        app.config.from_mapping(test_config)
 
 
-def show_time():
-    time_zone = pytz.timezone("Europe/Moscow")
-    time = datetime.now(time_zone).strftime('%H:%M:%S')
-    return render_template('index.html', time=time)
+    @app.route("/")
+    def index():
+        return show_time()
+
+    return app
 
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0")
+    create_app().run(host="0.0.0.0")

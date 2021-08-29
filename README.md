@@ -112,3 +112,6 @@ Inspiration, used materials, code snippets, etc.
 - [Template for the README.md](https://github.com/othneildrew/Best-README-Template/blob/master/BLANK_README.md)
 - [Online linter for Markdown](https://dlaa.me/markdownlint/)
 - [Linter for python](https://flake8.pycqa.org/en/latest/)
+- [Choosing best testing Python framework](https://www.pythonpool.com/python-unittest-vs-pytest/)
+- [Basics of unit testing in Python](https://medium.com/swlh/unit-testing-in-python-code-confidently-and-break-stuff-on-purpose-d246e7167e79)
+- [Best practices for writing unit tests in Python]()
