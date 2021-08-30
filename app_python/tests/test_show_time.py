@@ -1,9 +1,7 @@
-from datetime import datetime
-import pytz as pytz
+import re
 
 
 def test_show_time(client):
     response = client.get('/')
-    time_zone = pytz.timezone("Europe/Moscow")
-    time = datetime.now(time_zone).strftime('%H:%M:%S')
-    assert time.encode() in response.data
+    regex = (r'[0-9]{2}:[0-9]{2}:[0-9]{2}')
+    assert re.search(regex, response.data.__str__()) is not None
