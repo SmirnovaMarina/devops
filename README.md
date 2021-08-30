@@ -8,10 +8,12 @@ Table of contents
     1. [Prerequisites](#prerequisites)
     2. [Installation](#installation)
 3. [Usage](#usage)
-4. [Contributing](#contributing)
+4. [Testing](#testing)
+    1. [Unit tests](#unit-tests)
+5. [Contributing](#contributing)
 5. [License](#license)
-6. [Contact](#contact)
-7. [Acknowledgements](#acknowledgements)
+7. [Contact](#contact)
+8. [Acknowledgements](#acknowledgements)
 
 ## About the Project <a name="about"></a>
 
@@ -80,6 +82,10 @@ docker run -p 5000:5000 app-python-1
 ```
 
 Voi la!
+
+## Testing <a name="testing"></a>
+
+### Unit tests <a name="unit-tests"></a>
 
 ## Contributing <a name="contributing"></a>
 

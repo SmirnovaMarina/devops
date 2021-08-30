@@ -30,9 +30,9 @@ I chose Flask framework.
 
 ### Best practices for writing unit tests in Python
 
-1. Use Python standard library *unittest*.
+1. Use Python library *pytest*.
 
-I chose *unittest* since..
+I chose *pytest* since..
 
 2. Write tests in a separate file from the code itself. 
 
