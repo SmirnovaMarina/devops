@@ -1,7 +1,7 @@
 pipeline {
   environment {
     registry = 'marinasmirnova/devops:latest'
-    registryCredential = 'dockerhub'
+    registryCredential = 'DockerHub'
   }
   agent any
   stages {  // Define the individual processes, or stages, of your CI pipeline
