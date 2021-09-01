@@ -11,10 +11,11 @@ Table of contents
 4. [Testing](#testing)
     1. [Unit tests](#unit-tests)
 5. [CI/CD](#ci)
-6. [Contributing](#contributing)
-7. [License](#license)
-8. [Contact](#contact)
-9. [Acknowledgements](#acknowledgements)
+6. [Terraform](#terraform)
+7. [Contributing](#contributing)
+8. [License](#license)
+9. [Contact](#contact)
+10. [Acknowledgements](#acknowledgements)
 
 [![Pylint](https://github.com/SmirnovaMarina/devops/actions/workflows/pylint.yml/badge.svg?branch=develop&event=push)](https://github.com/SmirnovaMarina/devops/actions/workflows/pylint.yml)
 
@@ -112,6 +113,9 @@ pytest tests/
 
 As main tools for Continuous Integration and Continuous Development, I used GitHub Actions and Jetkins. To know more about best practices applied, read the *CI.md*.
 
+## Terraform <a name="terraform"></a>
+
+To know more about best practices applied, read the *TF.md*.
 
 ## Contributing <a name="contributing"></a>
 
@@ -149,4 +153,4 @@ Inspiration, used materials, code snippets, etc.
 - [Best practices for writing unit tests in Python](https://www.testim.io/blog/unit-testing-best-practices/)
 - [Best practices for GitHub Actions](https://www.docker.com/blog/best-practices-for-using-docker-hub-for-ci-cd/)
 - [Best practices for Jetkins](https://wiki.jenkins.io/display/jenkins/jenkins+best+practices)
-
+- [Best practices for Terraform](https://www.terraform.io/docs/extend/best-practices/index.html)
