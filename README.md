@@ -10,11 +10,17 @@ Table of contents
 3. [Usage](#usage)
 4. [Testing](#testing)
     1. [Unit tests](#unit-tests)
-5. [Workflows](#workflows)
+5. [CI/CD](#ci)
 6. [Contributing](#contributing)
 7. [License](#license)
 8. [Contact](#contact)
 9. [Acknowledgements](#acknowledgements)
+
+[![Pylint](https://github.com/SmirnovaMarina/devops/actions/workflows/pylint.yml/badge.svg?branch=develop&event=push)](https://github.com/SmirnovaMarina/devops/actions/workflows/pylint.yml)
+
+[![Python application](https://github.com/SmirnovaMarina/devops/actions/workflows/test-app.yml/badge.svg?branch=develop&event=push)](https://github.com/SmirnovaMarina/devops/actions/workflows/test-app.yml)
+
+[![CI to Docker Hub](https://github.com/SmirnovaMarina/devops/actions/workflows/build-push-dockerhub.yml/badge.svg?branch=main&event=push)](https://github.com/SmirnovaMarina/devops/actions/workflows/build-push-dockerhub.yml)
 
 ## About the Project <a name="about"></a>
 
@@ -102,13 +108,10 @@ To run all tests, execute the following command:
 pytest tests/
 ```
 
-## Workflows <a name="workflows"></a>
+## CI/CD <a name="ci"></a>
 
-[![Pylint](https://github.com/SmirnovaMarina/devops/actions/workflows/pylint.yml/badge.svg?branch=develop&event=push)](https://github.com/SmirnovaMarina/devops/actions/workflows/pylint.yml)
+As main tools for Continuous Integration and Continuous Development, I used GitHub Actions and Jetkins. To know more about best practices applied, read the *CI.md*.
 
-[![Python application](https://github.com/SmirnovaMarina/devops/actions/workflows/test-app.yml/badge.svg?branch=develop&event=push)](https://github.com/SmirnovaMarina/devops/actions/workflows/test-app.yml)
-
-[![CI to Docker Hub](https://github.com/SmirnovaMarina/devops/actions/workflows/build-push-dockerhub.yml/badge.svg?branch=main&event=push)](https://github.com/SmirnovaMarina/devops/actions/workflows/build-push-dockerhub.yml)
 
 ## Contributing <a name="contributing"></a>
 
@@ -144,3 +147,6 @@ Inspiration, used materials, code snippets, etc.
 - [Choosing best testing Python framework](https://www.pythonpool.com/python-unittest-vs-pytest/)
 - [Basics of unit testing in Python](https://medium.com/swlh/unit-testing-in-python-code-confidently-and-break-stuff-on-purpose-d246e7167e79)
 - [Best practices for writing unit tests in Python](https://www.testim.io/blog/unit-testing-best-practices/)
+- [Best practices for GitHub Actions](https://www.docker.com/blog/best-practices-for-using-docker-hub-for-ci-cd/)
+- [Best practices for Jetkins](https://wiki.jenkins.io/display/jenkins/jenkins+best+practices)
+
