@@ -10,10 +10,11 @@ Table of contents
 3. [Usage](#usage)
 4. [Testing](#testing)
     1. [Unit tests](#unit-tests)
-5. [Contributing](#contributing)
-5. [License](#license)
-7. [Contact](#contact)
-8. [Acknowledgements](#acknowledgements)
+5. [Workflows](#workflows)
+6. [Contributing](#contributing)
+7. [License](#license)
+8. [Contact](#contact)
+9. [Acknowledgements](#acknowledgements)
 
 ## About the Project <a name="about"></a>
 
@@ -71,7 +72,7 @@ python3 main.py
 
 Open a browser tab at http://127.0.0.1:5000/. Congratulations! You can see a page displaying Moscow's time.
 
-For the second variant, you will need to pull the app's image from the Docker Hub. 
+For the second variant, you will need to pull the app's image from the Docker Hub.
 
 ```bash
 docker pull marinasmirnova/devops:app-python-1
@@ -86,6 +87,28 @@ Voi la!
 ## Testing <a name="testing"></a>
 
 ### Unit tests <a name="unit-tests"></a>
+
+To test the application, I wrote unit tests with Pytest framework. To look through them, go to the *tests* directory inside *app_python*. To read about best testing practices open file *PYTHON.md*.
+
+To run a specific test with *test_\<function-name>.py*, execute the following command:
+
+```bash
+pytest tests/test_<function-name>.py
+```
+
+To run all tests, execute the following command:
+
+```bash
+pytest tests/
+```
+
+## Workflows <a name="workflows"></a>
+
+[![Pylint](https://github.com/SmirnovaMarina/devops/actions/workflows/pylint.yml/badge.svg?branch=develop&event=push)](https://github.com/SmirnovaMarina/devops/actions/workflows/pylint.yml)
+
+[![Python application](https://github.com/SmirnovaMarina/devops/actions/workflows/test-app.yml/badge.svg?branch=develop&event=push)](https://github.com/SmirnovaMarina/devops/actions/workflows/test-app.yml)
+
+[![CI to Docker Hub](https://github.com/SmirnovaMarina/devops/actions/workflows/build-push-dockerhub.yml/badge.svg?branch=main&event=push)](https://github.com/SmirnovaMarina/devops/actions/workflows/build-push-dockerhub.yml)
 
 ## Contributing <a name="contributing"></a>
 
@@ -120,4 +143,4 @@ Inspiration, used materials, code snippets, etc.
 - [Linter for python](https://flake8.pycqa.org/en/latest/)
 - [Choosing best testing Python framework](https://www.pythonpool.com/python-unittest-vs-pytest/)
 - [Basics of unit testing in Python](https://medium.com/swlh/unit-testing-in-python-code-confidently-and-break-stuff-on-purpose-d246e7167e79)
-- [Best practices for writing unit tests in Python]()
+- [Best practices for writing unit tests in Python](https://www.testim.io/blog/unit-testing-best-practices/)
