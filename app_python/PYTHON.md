@@ -30,22 +30,28 @@ I chose Flask framework.
 
 ### Best practices for writing unit tests in Python
 
-1. Use Python library *pytest*.
+1. Use *pytest* testing framework.
 
-I chose *pytest* since..
+I prefered *pytest* to *unittest* since this framework is easier to use than a former one. Testing with *pytest* is faster , and you produce more compact pieces of code.
 
-2. Write tests in a separate file from the code itself. 
+2. Write tests in a separate file from the code itself.
 
-Also, one of the appropriate naming conventions is to call test files *test_module_name*.
+That's why there are test files to test creation of application itself, correctness of shown time, completeness of the shown sentence's template ("The current time in Moscow is: %H:%M:%S").
 
-4. Not only test favourable outcomes, but also write tests that might break the behavior of the program. 
+3. One of the appropriate naming conventions is to call test files *test_\<module_or_function_name>.py*.
+
+4. Not only test favourable outcomes, but also write tests that might break the behaviour of the program.
 
 It increases test coverage of your program.
 
-4. Create fixtures.
+4. Using *pytest*, create fixtures.
 
-To reduce amount of boilerplate code.
+To reduce amount of boilerplate code and simplify the process of writing and running tests.
 
 5. Tests should be simple and fast.
 
-6. 
+For such a simple application as mine, *pytest* provide the best variant: just define the functions and assert the conditions inside them (no need to import modules and create test classes).  
+
+6. Tests should not be duplicates of the implementation logic.
+
+I realised that I violated this practice while testing the function for showing time. That's why I removed the code generating time from the test, and just added a regular expression to check the format of the time.    
