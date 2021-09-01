@@ -4,7 +4,7 @@ pipeline {
     // contained within your projects repository. This image should include
     // the core runtimes and dependencies required to run the job,
     // for example Python 3.x and NPM.
-    dockerfile { filename 'Dockerfile' }
+    docker { image 'python:3.9-slim' }
   }
   stages {  // Define the individual processes, or stages, of your CI pipeline
     stage('Setup') { // Install any dependencies you need to perform testing
@@ -39,7 +39,7 @@ pipeline {
         script {
           sh """
           docker build -t marinasmirnova/devops:latest .
-	  docker push marinasmirnova/devops:latest
+	        docker push marinasmirnova/devops:latest
           """
         }
       }
