@@ -1,34 +1,13 @@
 pipeline {
-  agent {
-    // Run this job within a Docker container built using Dockerfile.build
-    // contained within your projects repository. This image should include
-    // the core runtimes and dependencies required to run the job,
-    // for example Python 3.x and NPM.
-    docker { image 'python:3.9-slim' }
-  }
+  agent any
   stages {  // Define the individual processes, or stages, of your CI pipeline
     stage('Setup') { // Install any dependencies you need to perform testing
+      agent {docker { image 'python:3.9-slim' }}
       steps {
         script {
           sh """
           pip install -r app_python/requirements.txt
-          """
-        }
-      }
-    }
-    stage('Linting') { // Run pylint against your code
-      steps {
-        script {
-          sh """
-          flake8 app_python/ 
-          """
-        }
-      }
-    }
-    stage('Unit Testing') { // Perform unit testing
-      steps {
-        script {
-          sh """
+          flake8 app_python/
           pytest app_python/tests/
           """
         }
