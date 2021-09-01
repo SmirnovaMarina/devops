@@ -1,7 +1,7 @@
 pipeline {
   environment {
-    imageName = "marinasmirnova/devops:latest" 
-    dockerHubCredentials = "dockerhub"
+    registry = 'marinasmirnova/devops:latest'
+    registryCredential = 'dockerhub'
   }
   agent any
   stages {  // Define the individual processes, or stages, of your CI pipeline
@@ -20,8 +20,8 @@ pipeline {
     stage('Building and Pushing') { // Build docker image and push it to DockerHub
       steps {
         script {
-          dockerImage = docker.build(imageName, "./app_python")
-          docker.withRegistry('', dockerHubCredentials) {
+          dockerImage = docker.build(registry, "./app_python")
+          docker.withRegistry('', registryCredential) {
             dockerImage.push()
           }
         }
