@@ -17,7 +17,7 @@ pipeline {
       steps {
         script {
           sh """
-          docker build -t marinasmirnova/devops:latest app_python
+          docker build -t marinasmirnova/devops:latest app_python/
 	        docker push marinasmirnova/devops:latest
           """
         }
