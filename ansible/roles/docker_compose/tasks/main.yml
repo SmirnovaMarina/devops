@@ -1,0 +1,25 @@
+---
+- name: Prune existing docker images and containers
+  shell:
+    cmd: docker system prune -f
+
+- name: Create a directory for the project
+  file:
+    path: "{{ project_directory }}"
+    state: directory
+
+- name: Copy file docker-compose.yml 
+  template:
+    src: docker-compose.yml
+    dest: "{{ project_directory }}/docker-compose.yml"
+    mode: 600
+    owner: root
+    group: root
+
+- name: Execute docker-compose
+  docker_compose:
+    project_src: "{{ project_directory }}"
+    files:
+      - docker-compose.yml
+    state: present
+    pull: true
