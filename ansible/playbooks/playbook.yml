@@ -4,3 +4,4 @@
   become: true
   roles:
     - roles/docker
+    - roles/docker_compose
