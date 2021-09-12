@@ -1,0 +1,71 @@
+version: "3"  
+services:  
+  
+  promtail:
+    container_name: promtail_container
+    image: grafana/promtail:2.3.0
+    ports:
+      - "9080:9080"
+    networks:
+      - monitoring_network
+    volumes:
+      - /var/lib/docker/containers:/var/lib/docker/containers
+      - ./promtail/promtail.yml:/etc/promtail/promtail.yml
+      - promtail-data:/var/lib/promtail/positions
+    command: 
+      - '--config.file=/etc/promtail/promtail.yml'
+    restart: unless-stopped
+    
+  grafana:
+    container_name: grafana_container
+    image: grafana/grafana:latest
+    ports:
+      - "3000:3000"
+    networks:
+      - monitoring_network
+    volumes:
+      - grafana-data:/var/lib/grafana
+      - ./grafana/provisioning/datasource.yml:/etc/grafana/provisioning/datasource.yml
+    env_file:
+      - ./grafana/config.monitoring
+    restart: always
+
+  loki:
+    container_name: loki_container
+    image: grafana/loki:2.3.0
+    user: root
+    ports:
+      - "3100:3100"
+    networks:
+      - monitoring_network
+    volumes:
+      - ./loki/loki.yml:/etc/loki/local-config.yml
+      - loki-data:/tmp/loki/
+    command: 
+      - '--config.file=/etc/loki/local-config.yml'
+    restart: unless-stopped
+
+  app:
+    container_name: app_container
+    image: marinasmirnova/devops:latest
+    ports:
+      - "5000:5000"
+    networks:
+      - monitoring_network
+    logging:
+      driver: "json-file"
+      options:
+        tag: "{{ .ImageName }}|{{ .Name }}"
+
+
+networks:
+  monitoring_network:
+    name: monitoring_network
+    driver: bridge
+    ipam:
+      driver: default
+
+volumes:
+  grafana-data: {}
+  loki-data: {}
+  promtail-data: {}
