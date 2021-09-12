@@ -2,7 +2,7 @@
 
 ## Screenshots of a successfully working stack (Promtail, Loki, Grafana)
 
-![Working app](https://drive.google.com/file/d/1SM4qStuq3S36uqVAp5Ltj7brAoupRDE4/view?usp=sharing.png)
+![Working app](https://disk.yandex.ru/i/WwGLEXk3GjGvMg.png)
 
 <img src="" alt="loki"/>
 
