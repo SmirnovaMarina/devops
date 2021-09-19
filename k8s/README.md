@@ -12,17 +12,13 @@
 
 ## Screenshots after configuration with yml files 
 
-- Output of ```kubectl get pods``` command
+- Output of ```kubectl get pods, svc``` command
 
-![Output of kubectl get pods command](https://i.ibb.co/hFTyD2Z/Screenshot-2021-09-19-at-20-25-28.png)
-
-- Output of ```kubectl get svc``` command
-
-![Output of kubectl get svc command](https://i.ibb.co/x380HDm/Screenshot-2021-09-19-at-20-38-33.png)
+![Output of kubectl get pods, svc command](https://i.ibb.co/mNx8dDw/Screenshot-2021-09-19-at-21-16-19.png)
 
 - Kubernetes dashboard
 
-![Kubernetes dashboard](https://i.ibb.co/kBkTMfK/Screenshot-2021-09-19-at-20-40-40.png)
+![Kubernetes dashboard](https://i.ibb.co/7KkzYNc/Screenshot-2021-09-19-at-21-18-55.png)
 
 ## Acknowledgements
 
