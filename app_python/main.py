@@ -1,9 +1,10 @@
-from flask import Blueprint, Flask, Response  # ,send_file, request
+from flask import Blueprint, Flask, Response, render_template  # ,send_file, request
 from show_time import show_time
 from prometheus_client import Counter, \
     generate_latest, Gauge  # ,start_http_server,
 import docker
 import logging
+from multiprocessing import Value
 
 
 MAIN = Blueprint("main", __name__)
@@ -19,19 +20,34 @@ memory_gauge = Gauge(
 )
 requests_counter = Counter('num_requests', 'The number of requests.')
 
+counter = Value('i', 0)
+
 client = docker.from_env(version='1.41')
 
 
-@MAIN.route("/")
+@MAIN.route('/')
 def index():
     requests_counter.inc()
-    return show_time()
+    counter.value += 1
+    time = show_time()
+
+    file = open('files/visits.txt', 'a+')
+    file.write('{}\n'.format(time))
+    file.close()
+
+    return render_template('index.html', time=time)
+
+
+@MAIN.route('/visits')
+def get_requests_number():
+    file = open('files/visits.txt', 'r')
+    contents = file.read()
+    return 'The number of visits is {}.\nContent: {}'.format(counter.value, contents)
 
 
 @MAIN.route('/metrics', methods=['GET'])
 def get_data():
     """Returns all data as plaintext."""
-    requests_counter.inc()
 
     containers = client.containers.list()
 

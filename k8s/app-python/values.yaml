@@ -40,6 +40,12 @@ service:
   type: LoadBalancer
   port: 5000
 
+config:
+  volumeName: config-volume
+  configMapName: config-map
+  mountPath: /config.json
+  subPath: config.json
+
 ingress:
   enabled: false
   className: ""

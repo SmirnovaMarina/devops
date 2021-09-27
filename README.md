@@ -27,6 +27,8 @@ Table of contents
 
 MosTime is a python web-application allowing you to get current time in Moscow any time you want. Precision of the time is in seconds! The interface is as simple and intuitive as possible! Refresh of the web-page refreshes the time, too!
 
+With the new update (release v-12.0) you can track how many times the root path "/" was accessed by the client. To see the number of requests go to the ```/visits``` endpoint. Timestamps of the requests can be found there, as well.
+
 ### Built with <a name="built-with"></a>
 
 - Python (Flask framework)
