@@ -1,5 +1,6 @@
 import os
-from flask import Blueprint, Flask, Response, render_template  # ,send_file, request
+from flask import Blueprint, Flask, Response, \
+    render_template  # ,send_file, request
 from show_time import show_time
 from prometheus_client import Counter, \
     generate_latest, Gauge  # ,start_http_server,
@@ -46,7 +47,8 @@ def get_requests_number():
     file = open('files/visits.txt', 'r')
     contents = file.read()
     file.close()
-    return 'The number of visits is {}.\nContent: {}'.format(counter.value, contents)
+    return 'The number of visits is {}.\n' \
+           'Content: {}'.format(counter.value, contents)
 
 
 @MAIN.route('/metrics', methods=['GET'])
