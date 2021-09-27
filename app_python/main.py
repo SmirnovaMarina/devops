@@ -1,3 +1,4 @@
+import os
 from flask import Blueprint, Flask, Response, render_template  # ,send_file, request
 from show_time import show_time
 from prometheus_client import Counter, \
@@ -24,6 +25,8 @@ counter = Value('i', 0)
 
 client = docker.from_env(version='1.41')
 
+os.mkdir('./files')
+
 
 @MAIN.route('/')
 def index():
@@ -42,6 +45,7 @@ def index():
 def get_requests_number():
     file = open('files/visits.txt', 'r')
     contents = file.read()
+    file.close()
     return 'The number of visits is {}.\nContent: {}'.format(counter.value, contents)
 
 
