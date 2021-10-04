@@ -2,4 +2,3 @@ Dockerfile
 venv/
 PYTHON.md
 DOCKER.md
-visits.txt

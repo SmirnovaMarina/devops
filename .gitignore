@@ -53,4 +53,4 @@ terraform.tfstate.backup
 
 minikube-darwin-amd64
 
-visits.txt
+app_python_files/

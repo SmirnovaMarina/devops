@@ -1,0 +1,13 @@
+version: "3.7"
+
+services:
+  show_time:
+    #build:
+    #  context: ./app_python
+    image: marinasmirnova/devops:latest
+    ports:
+      - 5000:5000
+    volumes:
+      - ./app_python_files:/files
+    environment:
+      - DOCKER_API_VERSION=1.41

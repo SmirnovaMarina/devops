@@ -1,4 +1,3 @@
-import os
 from flask import Blueprint, Flask, Response, \
     render_template  # ,send_file, request
 from show_time import show_time
@@ -25,8 +24,6 @@ requests_counter = Counter('num_requests', 'The number of requests.')
 counter = Value('i', 0)
 
 client = docker.from_env(version='1.41')
-
-os.mkdir('./files')
 
 
 @MAIN.route('/')
