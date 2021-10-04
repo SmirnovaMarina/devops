@@ -32,18 +32,24 @@ def index():
     counter.value += 1
     time = show_time()
 
-    file = open('files/visits.txt', 'a+')
-    file.write('{}\n'.format(time))
-    file.close()
-
+    try:
+        file = open('files/visits.txt', 'a+')
+        file.write('{}\n'.format(time))
+        file.close()
+    except:
+        print('File not exist.')
     return render_template('index.html', time=time)
 
 
 @MAIN.route('/visits')
 def get_requests_number():
-    file = open('files/visits.txt', 'r')
-    contents = file.read()
-    file.close()
+    try:
+        file = open('files/visits.txt', 'r')
+        contents = file.read()
+        file.close()
+    except:
+        contents = ''
+        print('File not exist.')
     return 'The number of visits is {}.\n' \
            'Content: {}'.format(counter.value, contents)
 
