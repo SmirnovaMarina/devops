@@ -32,12 +32,27 @@ spec:
               path: /
               port: http
           volumeMounts:
+            - name: workdir
+              mountPath: "/workdir"
             - name: app-python-volume
               mountPath: "/app/files"
             - name: config-volume
               mountPath: "{{ .Values.config.mountPath }}"
               subPath: config.json
+      initContainers:
+      - name: install
+        image: busybox
+        command:
+        - wget
+        - "-O"
+        - "/work-dir/index.html"
+        - http://info.cern.ch
+        volumeMounts:
+        - name: workdir
+          mountPath: "/work-dir"
       volumes:
+        - name: workdir
+          emptyDir: {}
         - name: config-volume
           configMap:
             name: config-map
