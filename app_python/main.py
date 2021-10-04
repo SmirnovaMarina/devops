@@ -36,7 +36,7 @@ def index():
         file = open('files/visits.txt', 'a+')
         file.write('{}\n'.format(time))
         file.close()
-    except:
+    except FileNotFoundError:
         print('File not exist.')
     return render_template('index.html', time=time)
 
@@ -47,7 +47,7 @@ def get_requests_number():
         file = open('files/visits.txt', 'r')
         contents = file.read()
         file.close()
-    except:
+    except FileNotFoundError:
         contents = ''
         print('File not exist.')
     return 'The number of visits is {}.\n' \
