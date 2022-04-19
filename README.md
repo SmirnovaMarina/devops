@@ -19,8 +19,6 @@ Table of contents
 
 [![Pylint](https://github.com/SmirnovaMarina/devops/actions/workflows/pylint.yml/badge.svg?branch=develop&event=push)](https://github.com/SmirnovaMarina/devops/actions/workflows/pylint.yml)
 
-[![Python application](https://github.com/SmirnovaMarina/devops/actions/workflows/test-app.yml/badge.svg?branch=develop&event=push)](https://github.com/SmirnovaMarina/devops/actions/workflows/test-app.yml)
-
 [![CI to Docker Hub](https://github.com/SmirnovaMarina/devops/actions/workflows/build-push-dockerhub.yml/badge.svg?branch=main&event=push)](https://github.com/SmirnovaMarina/devops/actions/workflows/build-push-dockerhub.yml)
 
 ## About the Project <a name="about"></a>
